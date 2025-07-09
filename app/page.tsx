@@ -1,5 +1,4 @@
 import CompanionCard from '@/components/CompanionCard'
-import { Button } from '@/components/button'
 import React from 'react'
 import CompanionsList from '@/components/CompanionsList'
 import Cta from '@/components/CTA'
