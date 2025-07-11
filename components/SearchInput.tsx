@@ -10,6 +10,7 @@ import { SearchParamsContext } from 'next/dist/shared/lib/hooks-client-context.s
 
 
 
+
 const SearchInput = () => {
   const pathname = usePathname();
   const router = useRouter();
