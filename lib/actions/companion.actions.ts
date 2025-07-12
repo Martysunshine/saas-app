@@ -2,6 +2,9 @@
 
 import {auth} from '@clerk/nextjs/server';
 import { CreateSupabaseClient } from '@/lib/supabase';
+import { PostgrestFilterBuilder } from '@supabase/postgrest-js';
+
+
 
 
 export const createCompanion = async (formData: CreateCompanion) => {
@@ -40,5 +43,18 @@ export const getAllCompanions = async ({ limit = 10, page = 1, subject, topic }:
 
     return companions;
 
-
 }  
+
+export const getCompanions = async (id: string) => {
+    const supabase = CreateSupabaseClient();
+
+    const { data, error } = await supabase
+        .from('companions')
+        .select()
+        .eq('id', id);
+
+    if(error) return console.log(error);
+
+    return data[0];
+
+}
