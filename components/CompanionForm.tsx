@@ -19,6 +19,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { subjects } from "@/constants"
 import { createCompanion } from "@/lib/actions/companion.actions"
 import { redirect } from "next/navigation"
+import { Textarea } from "./ui/textarea"
 
 
 
@@ -120,7 +121,7 @@ const onSubmit = async (values: z.infer<typeof formSchema>) => {
             <FormItem>
               <FormLabel>What should the companion help with?</FormLabel>
               <FormControl>
-                <Input placeholder="Ex. Derivatives & Integrals"  {...field} className="input"/>
+                <Textarea placeholder="Ex. Derivatives & Integrals"  {...field} className="input"/>
               </FormControl>
               <FormMessage />
             </FormItem>
